@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Formulario Macabros</title>
+    <link href="CSS/primerCSS.css" rel="stylesheet">
+</head>
+
+<body background="imagenes/fondo2.jpg">
+    <h1 align="center">Formulario</h1>
+    <div align="center">
+        <form action="http://www.iesjacaranda.es/lmsgi/resultado.php" id="form">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" placeholder="Solo Nombre/s" id="name" size="30px" maxlength="55">
+            <p>Tu Correo Electronico:<input type="email" name="email" placeholder="Correo*" id="email" size="30px" maxlength="255"></p>
+            <p>Fecha de nacimiento: <input type="date" name="fecha"></p>
+
+            <p>Sexo:<input type="radio" name="Sexo" value="hombre" id="sexo"> Hombre
+                <input type="radio" name="Sexo" value="mujer" id="sexo"> Mujer
+                <input type="radio" name="Sexo" value="indefinido" id="sexo"> Indefinido</p>
+            <p>Condiciones:<input type="checkbox" name="conditions" value="accept" id="conditions"></p>
+
+            <p>
+                <input type="submit" value="Enviar" id="submitButton" disabled>
+                <input type="reset" name="limpiar" value="Borrar datos del formulario" />
+            </p>
+
+        </form>
+
+    </div>
+    <script src="javascript/ejJava.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Ejemplo 5</title>
+    <link href="css.css" rel="stylesheet">
+</head>
+
+<body>
+    <h2>Formularios</h2>
+    <div>    
+        <form action="http://www.iesjacaranda.es/lmsgi/resultado.php" id="form">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" placeholder="Solo Nombre/s" id="name" size="30px" maxlength="55">
+            <p>Tu Correo Electronico:<input type="email" name="email" placeholder="Correo*" id="email" size="30px" maxlength="255"></p>
+            <p>Fecha de nacimiento: <input type="date" name="fecha"></p>
+
+            <p>Sexo:<input type="radio" name="Sexo" value="hombre" id="sexo"> Hombre
+                <input type="radio" name="Sexo" value="mujer" id="sexo"> Mujer
+                <input type="radio" name="Sexo" value="indefinido" id="sexo"> Indefinido</p>
+            <p>Condiciones:<input type="checkbox" name="conditions" value="accept" id="conditions"></p>
+
+            <p>
+                <input type="submit" value="Enviar" id="submitButton">
+                <input type="reset" name="limpiar" value="Borrar datos del formulario" />
+            </p>
+        </form>
+        <a href="https://es.wallapop.com/">Enlace 1</a>
+        <a href="https://educacionadistancia.juntadeandalucia.es/centros/sevilla/">Enlace 2</a><br>
+        <img src="dragonBarbudo.jpg" height="200" width="200">
+        <p id="demo"></p>
+    </div>
+    </div>
+    <input type="button" value="Altura pantalla" id="altura"><br>
+    <input type="button" value="Anchura pantalla" id="anchura"><br>
+    <input type="button" value="Profundidad colora" id="color"><br>
+    <input type="button" value="Altura pantalla total" id="alturaT"><br>
+    <input type="button" value="Anchura pantalla total" id="anchuraT"><br>
+    
+
+    
+    <script src="javascript.js"></script>
+</body>
+</html>

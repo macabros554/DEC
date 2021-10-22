@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Primer blog</title>
+    <link href="estilos.css" rel="stylesheet">
+</head>
+
+<body >
+    <div>
+    <h1>Crear usuario</h1>
+    <form id="form">
+        <label for="name">Nombre: </label><input type="text" name="name" id="name" required><br><br>
+        <label for="dni">DNI: </label><input type="text" name="dni" id="dni" required><br><br>
+        <label for="telefono">Telefono: </label><input type="text" name="telefono" id="telefono" required><br><br>
+        <label for="email">Email </label><input type="email" name="email" id="email" required><br><br>
+    
+        <input type="submit" value="Crear" id="submitButton"><br><br>
+    </form>
+
+    </div>
+    <br>
+    <div id="tabla">
+
+
+    </div>
+    <br>
+    <div>
+        <h1>Crear posts</h1>
+        <form id="crearPosts">
+            <label for="titulo">Titulo: </label><input type="text" name="titulo" id="titulo" required><br><br>
+            <label for="autor">Autor: </label>
+            <select name="autor" id="autor" required>
+            </select><br><br>
+            <!--https://www.w3schools.com/tags/tag_select.asp-->
+            <label for="cuerpo">Cuerpo: </label><input type="text" name="cuerpo" id="cuerpo" required><br><br>
+        
+            <input type="submit" value="Crear" id="submitButtonPost"><br><br>
+        </form>
+    </div>
+
+
+
+    
+    <script src="scriptUser.js"></script>
+    <script src="scriptList.js"></script>
+    <!--<script src="scripPost.js"></script>-->
+</body>
+</html>

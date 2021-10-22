@@ -1,0 +1,30 @@
+div{
+    text-align: center;
+    border: 2px outset rgb(0, 0, 0);
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 2%;
+}
+
+#elPost{
+    text-align: center;
+    border: 2px outset rgb(0, 0, 0);
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 2%;
+}
+
+
+body{
+    background: aqua;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+}
+
+table{
+    width: 100%;
+}

@@ -20,8 +20,15 @@ function empezar() {
     
         document.getElementById("mensajeFecha").innerHTML = mostrar;
     
-        if (fechaFuncional==fechaAlarmaFuncional) {
+        if (fechaFuncional.getDate()===fechaAlarmaFuncional.getDate()&&
+            fechaFuncional.getMonth()===fechaAlarmaFuncional.getMonth()&&
+            fechaFuncional.getUTCFullYear()===fechaAlarmaFuncional.getUTCFullYear()&&
+            fechaFuncional.getHours()===fechaAlarmaFuncional.getHours()&&
+            fechaFuncional.getMinutes()===fechaAlarmaFuncional.getMinutes()&&
+            fechaFuncional.getSeconds()===fechaAlarmaFuncional.getSeconds()
+        ) {
             console.log("hora alcanzada");
+            
         }
     }, 1000);
 }

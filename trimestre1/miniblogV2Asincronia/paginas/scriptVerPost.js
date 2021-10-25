@@ -104,7 +104,7 @@ function iniciar2(posts) {
       const nuevoComentario = {
         body: texto,
         author: user,
-        idPost: idPost
+        postId: idPost
       }
 
       const cadena3={method:"POST"}

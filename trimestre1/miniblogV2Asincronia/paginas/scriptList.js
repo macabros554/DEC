@@ -40,16 +40,23 @@ pedirPosts.addEventListener('load', function() {
 })
 
 
+
 tablita=document.getElementById("tabla");
-let peticionNueva=new XMLHttpRequest();
 tabla.addEventListener("click",(e)=> {
     if(e.target.name=="Ver"){
-        //window.location.href = `http://localhost:3000/posts/${e.target.id}`;
         window.location.href = 'verPost.html?id='+e.target.id;
 
     }else if (e.target.name=="Borrar") {
-        peticionNueva.open('DELETE', `http://localhost:3000/posts/${e.target.id}`);
-        peticionNueva.send();
+        
+        const cadena3={method:"POST"}
+
+        fetch(`http://localhost:3000/posts/${e.target.id}`,{
+            method: 'DELETE'})
+          .then(data => {return data.json();})
+          .catch(err => {
+            console.log('Error en la petición HTTP: '+err.message);
+          })
+
     }
 })
 

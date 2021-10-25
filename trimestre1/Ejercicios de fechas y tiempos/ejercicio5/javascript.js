@@ -4,7 +4,8 @@ let posponer = document.getElementById("botoncito2");
 let detener = document.getElementById("botoncito3");
 
 let fechaFuncional = new Date();
-
+let fondo = document.getElementsByTagName("theBody");
+let alarma = document.getElementsByTagName("audio");
 
 accion.addEventListener('click',empezar);
 
@@ -28,7 +29,9 @@ function empezar() {
             fechaFuncional.getSeconds()===fechaAlarmaFuncional.getSeconds()
         ) {
             console.log("hora alcanzada");
-            
+            document.style.backgroundColor = "#0000FF";
+
+
         }
     }, 1000);
 }

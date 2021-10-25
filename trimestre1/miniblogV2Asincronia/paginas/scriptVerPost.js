@@ -1,10 +1,9 @@
 const datos=window.location.search;
 const urlParametros=new URLSearchParams(datos);
 let idPost = urlParametros.get("id");
-let link = 'http://localhost:3000/posts/'+idPost;
 const cadena={method:"GET"}
-//preguntar porque si pongo directamente el enlace y metodo no funciona
-fetch(link,cadena)
+//preguntar porque si pongo directamente el metodo no funciona
+fetch('http://localhost:3000/posts/'+idPost,cadena)
   .then(data => data.json())
   .then(data => iniciar1(data));
 
@@ -29,12 +28,12 @@ function iniciar1(posts) {
     divTabla1.appendChild(tabla1);
 }
 
-let link2 = 'http://localhost:3000/comments/?id='+idPost;
 const cadena2={method:"GET"}
 
-fetch(link2,cadena2)
+fetch('http://localhost:3000/comments/?id='+idPost,cadena2)
   .then(data => data.json())
   .then(data => iniciar2(data));
+  
 
 function iniciar2(posts) {
 
@@ -62,7 +61,7 @@ function iniciar2(posts) {
         let botonDeEnviar=document.createElement("input");
         botonDeEnviar.setAttribute("type","button");
         botonDeEnviar.setAttribute("value","Enviar");
-        botonDeEnviar.addEventListener("click",enviarComentario)
+        botonDeEnviar.addEventListener("click",enviarComentario);
         let selectorDePersonaje=document.createElement("select");
 
         const peticionParaElSelect = new XMLHttpRequest();
@@ -89,7 +88,12 @@ function iniciar2(posts) {
 
         divTabla2.appendChild(tabla2);
         
+
+
         function enviarComentario() {
+
+
+
             let texto = document.getElementsByTagName("textContent")[0];
             let user = document.getElementsByTagName("select")[0].value;
 
@@ -99,15 +103,20 @@ function iniciar2(posts) {
                 idPost: idPost
             }
 
-            let peticionExtra = new XMLHttpRequest();
-            peticionExtra.open('POST', 'http://localhost:3000/comments/');
-            peticionExtra.setRequestHeader("Content-type","application/json");
-            peticionExtra.send(JSON.stringify(nuevoComentario));
-            peticionExtra.addEventListener('load', function() {
-                location.reload();
-            })
-        
-        }
+            const cadena3={method:"POST"}
+
+            fetch('http://localhost:3000/comments/',{
+                method: 'POST', // or 'PUT'
+                body: JSON.stringify(nuevoComentario),
+                headers:{
+                  'Content-Type': 'application/json'
+                }})
+              .then(data => {return data.json();})
+              .catch(err => {
+                console.log('Error en la petición HTTP: '+err.message);
+              })
+              
+              }
 
 }
 

@@ -59,11 +59,16 @@ function crearUsuario() {
         email: email.value,
     }
 
-    const peticion=new XMLHttpRequest();
-    peticion.open('POST', 'http://localhost:3000/users');
-    peticion.setRequestHeader('Content-type', 'application/json');
-    peticion.send(JSON.stringify(usuario));
-    peticion.addEventListener('load', function() {
+    const cadena3={method:"POST"}
 
-})
+    fetch('http://localhost:3000/users',{
+        method: 'POST',
+        body: JSON.stringify(usuario),
+        headers:{
+          'Content-Type': 'application/json'
+        }})
+      .then(data => {return data.json();})
+      .catch(err => {
+        console.log('Error en la petición HTTP: '+err.message);
+      })
 }

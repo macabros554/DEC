@@ -56,8 +56,9 @@ tabla.addEventListener("click",(e)=> {
           .catch(err => {
             console.log('Error en la petición HTTP: '+err.message);
           })
-
+        window.location.reload();
     }
+    
 })
 
 

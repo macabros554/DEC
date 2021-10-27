@@ -1,0 +1,13 @@
+.container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+div{
+    text-align: center;
+}
+.caja{
+        border: 1px solid black;
+}

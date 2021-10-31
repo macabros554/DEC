@@ -7,24 +7,34 @@ let botonBorrar = document.createElement("input");
 botonBorrar.setAttribute("type","button");
 botonBorrar.setAttribute("value","borrar");
 
-let contador=0;
 botonSubirTexto.addEventListener("click",rellenar);
 botonBorrar.addEventListener("click",borrarTarea)
+
+let contador=0;
 
 window.addEventListener('DOMContentLoaded',recargarLista);
 
 function recargarLista(e) {
 
-    contador=sessionStorage.length;
+    contador=localStorage.length;
     
-    for (let i = 0; i < sessionStorage.length; i++) {
+    for (let i = 0; i < localStorage.length; i++) {
 
         let divInterno=document.createElement("div");
+        let tarea = JSON.parse(localStorage.getItem(i));
         divInterno.setAttribute("id",i);
         divInterno.setAttribute("draggable",true);
         divInterno.setAttribute("ondragstart","drag(event)");
-        divInterno.innerHTML=sessionStorage.getItem(i);
-        tareaPendiente.appendChild(divInterno);
+        divInterno.innerHTML=tarea.mensaje;
+        if (tarea.bloque==='tareaPendiente') {
+            tareaPendiente.appendChild(divInterno);
+        }else if (tarea.bloque==='tareaInProcess') {
+            tareaInProcess.appendChild(divInterno);
+        }else if (tarea.bloque==='tareaFiniquitada') {
+            tareaFiniquitada.appendChild(divInterno);
+        }
+
+        
         
     }
 
@@ -33,6 +43,11 @@ function recargarLista(e) {
 function rellenar(e) {
     e.preventDefault();
 
+    const datosDiv ={
+        bloque:'tareaPendiente',
+        mensaje:textoTarea.value
+    }
+
     let divInterno=document.createElement("div");
     divInterno.setAttribute("id",contador);
     divInterno.setAttribute("draggable",true);
@@ -40,13 +55,13 @@ function rellenar(e) {
     divInterno.innerHTML=textoTarea.value;
     tareaPendiente.appendChild(divInterno);
     
-    sessionStorage.setItem(contador,textoTarea.value);
+    localStorage.setItem(contador,JSON.stringify(datosDiv));
     contador++;
 
 }
 
 function borrarTarea() {
-    sessionStorage.removeItem(botonBorrar.id)
+    localStorage.removeItem(botonBorrar.id)
     location.reload();
 }
 
@@ -180,12 +195,20 @@ tareaInProcess.addEventListener('drop', (e) => {
     e.preventDefault()
     const element = document.getElementById(e.dataTransfer.getData('text'))
     element.classList.remove('active')
+    localStorage.removeItem(element);
+    let tarea = JSON.parse(localStorage.getItem(element.id));
+    tarea.bloque='tareaInProcess';
+    localStorage.setItem(element.id,JSON.stringify(tarea));
     tareaInProcess.appendChild(tareaPendiente.removeChild(element))
 })
 tareaInProcess.addEventListener('drop', (e) => {
     e.preventDefault()
     const element = document.getElementById(e.dataTransfer.getData('text'))
     element.classList.remove('active')
+    localStorage.removeItem(element);
+    let tarea = JSON.parse(localStorage.getItem(element.id));
+    tarea.bloque='tareaInProcess';
+    localStorage.setItem(element.id,JSON.stringify(tarea));
     tareaInProcess.appendChild(tareaFiniquitada.removeChild(element))
 })
 
@@ -193,12 +216,20 @@ tareaPendiente.addEventListener('drop', (e) => {
     e.preventDefault()
     const element = document.getElementById(e.dataTransfer.getData('text'))
     element.classList.remove('active')
+    localStorage.removeItem(element);
+    let tarea = JSON.parse(localStorage.getItem(element.id));
+    tarea.bloque='tareaPendiente';
+    localStorage.setItem(element.id,JSON.stringify(tarea));
     tareaPendiente.appendChild(tareaInProcess.removeChild(element))
 })
 tareaPendiente.addEventListener('drop', (e) => {
     e.preventDefault()
     const element = document.getElementById(e.dataTransfer.getData('text'))
     element.classList.remove('active')
+    localStorage.removeItem(element);
+    let tarea = JSON.parse(localStorage.getItem(element.id));
+    tarea.bloque='tareaPendiente';
+    localStorage.setItem(element.id,JSON.stringify(tarea));
     tareaPendiente.appendChild(tareaFiniquitada.removeChild(element))
 })
 
@@ -206,12 +237,20 @@ tareaFiniquitada.addEventListener('drop', (e) => {
     e.preventDefault()
     const element = document.getElementById(e.dataTransfer.getData('text'))
     element.classList.remove('active')
+    localStorage.removeItem(element);
+    let tarea = JSON.parse(localStorage.getItem(element.id));
+    tarea.bloque='tareaFiniquitada';
+    localStorage.setItem(element.id,JSON.stringify(tarea));
     tareaFiniquitada.appendChild(tareaInProcess.removeChild(element))
 })
 tareaFiniquitada.addEventListener('drop', (e) => {
     e.preventDefault()
     const element = document.getElementById(e.dataTransfer.getData('text'))
     element.classList.remove('active')
+    localStorage.removeItem(element);
+    let tarea = JSON.parse(localStorage.getItem(element.id));
+    tarea.bloque='tareaFiniquitada';
+    localStorage.setItem(element.id,JSON.stringify(tarea));
     tareaFiniquitada.appendChild(tareaPendiente.removeChild(element))
 })
 

@@ -21,7 +21,7 @@ var batman: batmanDC = {
 }
 
 // Convertir esta funcion a una funcion de flecha
-function resultadoDoble( a, b ){
+function resultadoDoble( a:number, b:number ){
   return (a + b) * 2
 }
 
@@ -52,8 +52,15 @@ function getAvenger( nombre:string, poder?:string, arma:string  = "arco" ){
 class rectangulo {
   base:number;
   altura:number;
-}
 
-function generarArea(base:number, altura:number){
-  let area: number=base*altura;
+  constructor(base:number,altura:number){
+    this.base=base;
+    this.altura=altura;
+  }
+
+  generarArea(base:number, altura:number){
+    let area: number=base*altura;
+    return area;
+  }
+
 }

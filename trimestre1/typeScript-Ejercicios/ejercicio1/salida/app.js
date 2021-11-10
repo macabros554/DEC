@@ -37,10 +37,13 @@ function getAvenger(nombre, poder, arma) {
 // También un método que calcule el área  =  base * altura,
 // ese método debe de retornar un numero.
 var rectangulo = /** @class */ (function () {
-    function rectangulo() {
+    function rectangulo(base, altura) {
+        this.base = base;
+        this.altura = altura;
     }
+    rectangulo.prototype.generarArea = function (base, altura) {
+        var area = base * altura;
+        return area;
+    };
     return rectangulo;
 }());
-function generarArea(base, altura) {
-    var area = base * altura;
-}

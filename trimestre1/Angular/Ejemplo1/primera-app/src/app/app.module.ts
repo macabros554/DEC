@@ -2,14 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { PruebaComponenteComponent } from './componentes/prueba-componente/prueba-componente.component';
-import { PruebitaComponent } from './componentes/pruebita/pruebita.component';
-
+import { ContadorComponent } from './contador.component';
+import { AlumnoComponent } from './componentes/alumno/alumno.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PruebaComponenteComponent,
-    PruebitaComponent
+    ContadorComponent,
+    AlumnoComponent
   ],
   imports: [
     BrowserModule

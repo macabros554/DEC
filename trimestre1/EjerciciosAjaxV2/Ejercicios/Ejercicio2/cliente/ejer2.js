@@ -12,14 +12,14 @@ boton.addEventListener('click',(e)=>{
     let respuesta = document.createElement("h3");
     let lista = document.getElementById('alternativas');
     
-
     
     
     
-    fetch('https://intranetjacaranda.es/Ejercicios/Ejercicio2/servidor/compruebaDisponibilidadXML.php'),{
+    
+    fetch('https://intranetjacaranda.es/Ejercicios/Ejercicio2/servidor/compruebaDisponibilidadXML.php',{
         method:'POST',
         body: formData
-    }
+    })
     .then(data => {
         if (data.ok) {
             return data.text();

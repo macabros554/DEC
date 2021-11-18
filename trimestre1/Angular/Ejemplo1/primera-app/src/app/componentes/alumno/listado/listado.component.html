@@ -1,0 +1,39 @@
+<h1>lista alumnos</h1>
+
+<!--<ul>
+  <li *ngFor="let alumno of listaAlumnos;let i=index;let par=odd;let impar=even"
+  [ngClass]="{azul:par, verde:impar}">
+    {{i+1}} - {{alumno}}
+
+  </li>
+
+
+</ul>-->
+<h3 *ngIf="listaAlumnos.length==0;">No te quedan alumnos</h3>
+<ul>
+  <li *ngFor="let alumno of listaAlumnos;let i=index;let primero=first;let ultimo=last"
+  [ngClass]="{azul:primero, rojo:ultimo}">
+    {{i+1}} - {{alumno}}
+  </li>
+</ul>
+
+<button (click)="eliminar()" *ngIf="listaAlumnos.length">borrar primer elemento</button>
+
+<h2 *ngIf="eliminado.length>0; else vacio">Ultimo eliminado</h2>
+<ul>
+  <li *ngFor="let elimi of eliminado;let i=index;let primero=first;let ultimo=last"
+  [ngClass]="{azul:primero, rojo:ultimo}">
+    {{i+1}} - {{elimi}}
+  </li>
+</ul>
+
+<p>{{eliminado}}</p>
+
+<button (click)="agregar()" *ngIf="eliminado.length">borrar primer elemento</button>
+
+<ng-template #vacio>
+
+  <h2>Elimina alumnos</h2>
+</ng-template>
+
+<app-notas></app-notas>

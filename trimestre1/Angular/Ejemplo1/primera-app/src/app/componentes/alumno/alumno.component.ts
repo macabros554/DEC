@@ -14,8 +14,10 @@ export class AlumnoComponent implements OnInit {
     return this.nombre.toUpperCase();
   };
 
-  cambiarDatos1(){
+  cambiarNombre(){
     this.nombre="Javi Lira";
+  }
+  cambiarEdad(){
     this.edad=19;
   }
   constructor() { }

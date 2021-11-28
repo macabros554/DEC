@@ -1,0 +1,25 @@
+<h2>Equipos</h2>
+<ul>
+  Betis
+  <ng-container *ngFor="let jugador of jugadores">
+    <li *ngIf="jugador.equipo=='Betis'">{{jugador.nombre}} - {{jugador.numero}}</li>
+  </ng-container>
+</ul>
+<ul>
+  Sevilla
+  <ng-container *ngFor="let jugador of jugadores">
+    <li *ngIf="jugador.equipo=='Sevilla'">{{jugador.nombre}} - {{jugador.numero}}</li>
+  </ng-container>
+</ul>
+<ul>
+  Madrid
+  <ng-container *ngFor="let jugador of jugadores">
+    <li *ngIf="jugador.equipo=='Madrid'">{{jugador.nombre}} - {{jugador.numero}}</li>
+  </ng-container>
+</ul>
+<ul>
+  Barcelona
+  <ng-container *ngFor="let jugador of jugadores">
+    <li *ngIf="jugador.equipo=='Barcelona'">{{jugador.nombre}} - {{jugador.numero}}</li>
+  </ng-container>
+</ul>

@@ -1,0 +1,24 @@
+<h2>Añadir jugadores</h2>
+<hr>
+  <form (ngSubmit)="agregar()">
+    <h4>Datos jugadores</h4>
+    <input
+    type="text"
+    name="nombre"
+    placeholder="Nombre"
+    [(ngModel)] ="nuevo.nombre"
+    >
+    <input
+    type="number"
+    name="numero"
+    placeholder="Numero"
+    [(ngModel)] ="nuevo.numero"
+    >
+    <label>Equipo</label>
+    <select name="Equipos" [(ngModel)] ="nuevo.equipo">
+      <option *ngFor="let equipo of equipos" [value]="equipo">
+        {{equipo}}
+      </option>
+    </select>
+    <button type="submit">Añadir</button>
+  </form>

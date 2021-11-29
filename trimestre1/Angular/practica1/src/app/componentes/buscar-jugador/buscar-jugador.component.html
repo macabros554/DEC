@@ -1,1 +1,18 @@
 <h2>Buscar Jugathor</h2>
+
+<form (ngSubmit)="buscar()">
+  <input
+  type="text"
+  name="nombre"
+  placeholder="Nombre"
+  [(ngModel)] ="nombre"
+  >
+  <button type="submit">Buscar</button>
+</form>
+
+<div>
+  <ul>
+    <li *ngFor="let jugathor of jugadoresEncontrados">{{jugathor.nombre}} - {{jugathor.numero}} - {{jugathor.equipo}}</li>
+  </ul>
+
+</div>

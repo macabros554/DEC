@@ -12,21 +12,14 @@ export class GifsServiceService {
   }
 
   constructor() { }
-  verdad:boolean=true;
+
   buscarGifs (query: string){
 
-    this.verdad=true;
-
-    this.historia.splice(9,1)
-
-    for (let i = 0; i < this.historia.length; i++) {
-      if (this.historia[i]==query) {
-        this.verdad=false;
+    if (!this.historia.includes(query)) {
+      this.historia.unshift(query);
+      if (this.historia.length==10) {
+        this.historia.splice(9,1)
       }
     }
-    if (this.verdad) {
-      this.historia.unshift(query);
-    }
-
   }
 }

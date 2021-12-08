@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { GifsModule } from './gifs/gifs.module';
 import { ShareModule } from './share/share.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ShareModule } from './share/share.module';
   imports: [
     BrowserModule,
     ShareModule,
-    GifsModule
+    GifsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,6 +15,6 @@ export class BusquedaComponent implements OnInit {
   }
 
   agregar(){
-    this.bsService.buscarGifs(this.historieta);
+    this.bsService.listaGifsBuscados(this.historieta);
   }
 }

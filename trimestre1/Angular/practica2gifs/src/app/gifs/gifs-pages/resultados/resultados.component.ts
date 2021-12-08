@@ -1,4 +1,6 @@
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { GifsServiceService } from '../../gifs-service.service';
 
 @Component({
   selector: 'app-resultados',
@@ -6,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultadosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bsService:GifsServiceService) {}
 
   ngOnInit(): void {
   }
 
+  get listaGifsBuscados(){
+    return this.bsService.arrayGifs;
+  }
 }

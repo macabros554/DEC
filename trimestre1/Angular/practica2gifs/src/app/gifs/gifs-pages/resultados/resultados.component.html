@@ -1,10 +1,16 @@
+<div class="row">
+  <div class="col-md-4 col-sm-6 " *ngFor="let item of listaGifsBuscados">
 
-  <!-- Resultados -->
-  <div class="row">
-    <div>
-      <!-- Ya le daremos contenido -->
-    </div>
+      <div class="card">
+          <img [src]="item.images.downsized_medium.url"
+               [alt]="item.title"
+               class="card-img-top">
+          <div class="card-body">
+              <p class="card-text">
+                  {{item.title}}
+              </p>
+          </div>
+      </div>
+
   </div>
-
-  <!-- End Resultados -->
-
+</div>

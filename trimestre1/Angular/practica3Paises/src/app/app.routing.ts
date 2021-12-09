@@ -1,4 +1,3 @@
-// app.routing.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -32,7 +31,6 @@ const routes: Routes = [
 ];
 
 const appRoutes = [
-
   { path: 'pais/:id',
    component: VerPaisComponent }
  ];

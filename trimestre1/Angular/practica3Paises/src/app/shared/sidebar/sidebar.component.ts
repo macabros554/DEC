@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuscaService } from '../../pais/services/busca.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bsService:BuscaService) { }
+
+  get paisesEncontrados():string[]{
+    return this.bsService.paisesEncontrados;
+  }
 
   ngOnInit(): void {
   }

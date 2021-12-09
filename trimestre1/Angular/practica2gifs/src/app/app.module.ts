@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { GifsModule } from './gifs/gifs.module';
 import { ShareModule } from './share/share.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     ShareModule,
     GifsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

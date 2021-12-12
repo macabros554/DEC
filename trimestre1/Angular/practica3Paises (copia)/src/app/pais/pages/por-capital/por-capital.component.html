@@ -1,0 +1,34 @@
+<input
+    type="text"
+    class="form-control"
+    placeholder="Buscar ..."
+    [(ngModel)] ="capitalB"
+    (keyup.enter)="buscaPais()"
+>
+
+<hr class="text-white"/>
+
+<table class="table table-hover">
+  <thead>
+      <tr>
+          <th> # </th>
+          <th> Bandera </th>
+          <th> Nombre </th>
+          <th> Población </th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let capital of resultado; let i=index"> <!-- Esto es lo que tenemos que repetir por cada país que encuentre -->
+          <td> {{i}} </td> <!-- Aquí obtendremos el número de resultado -->
+          <td>
+              <img class="small-flag" [src]="capital.flags.svg" > <!-- Aquí obtendremos la url de la bandera -->
+          </td>
+          <td> {{capital.capital}},{{capital.name.common}}</td> <!-- La capital, el nombre del país y la población lo obtendremos de la api -->
+          <td> {{capital.population}}</td>
+          <td>
+              <a >Ver...</a> <!-- Esto lo dejamos así de momento -->
+          </td>
+      </tr>
+  </tbody>
+</table>

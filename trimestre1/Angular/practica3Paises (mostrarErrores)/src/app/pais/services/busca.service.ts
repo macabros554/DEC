@@ -19,18 +19,24 @@ export class BuscaService {
   buscarPais(query:string){
     this.httpClient.get<InterfaceGlobal>(this.enlacePais+query).subscribe((resp) => {
       this.resultado = resp;
+    },(err) =>{
+
     })
   }
 
   buscarCapital(query:string){
     this.httpClient.get<InterfaceGlobal>(this.enlaceCapital+query).subscribe((resp) => {
       this.resultado = resp;
+    },(err) =>{
+
     })
   }
 
   buscarRegion(query:string){
     this.httpClient.get<InterfaceGlobal>(this.enlaceRegion+query).subscribe((resp) => {
       this.resultado = resp;
+    },(err) =>{
+
     })
   }
 

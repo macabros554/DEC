@@ -15,28 +15,32 @@ export class BuscaService {
   enlaceRegion:string="https://restcountries.com/v3.1/region/";
   pais:string="";
   resultado:any=null;
+  tieneError:boolean=false;
 
   buscarPais(query:string){
+    this.tieneError=false;
     this.httpClient.get<InterfaceGlobal>(this.enlacePais+query).subscribe((resp) => {
       this.resultado = resp;
     },(err) =>{
-
+      this.tieneError=true;
     })
   }
 
   buscarCapital(query:string){
+    this.tieneError=false;
     this.httpClient.get<InterfaceGlobal>(this.enlaceCapital+query).subscribe((resp) => {
       this.resultado = resp;
     },(err) =>{
-
+      this.tieneError=true;
     })
   }
 
   buscarRegion(query:string){
+    this.tieneError=false;
     this.httpClient.get<InterfaceGlobal>(this.enlaceRegion+query).subscribe((resp) => {
       this.resultado = resp;
     },(err) =>{
-
+      this.tieneError=true;
     })
   }
 

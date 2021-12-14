@@ -1,34 +1,11 @@
-<input
-    type="text"
-    class="form-control"
-    placeholder="Buscar ..."
-    [(ngModel)] ="regionB"
-    (keyup.enter)="buscaPais()"
->
+<h1>Busqueda por region</h1>
+<div class="row">
+  <app-pais-busqueda (onEnter)="buscaPais($event)"></app-pais-busqueda>
+</div>
+
 
 <hr class="text-white"/>
 
-<table class="table table-hover">
-  <thead>
-      <tr>
-          <th> # </th>
-          <th> Bandera </th>
-          <th> Nombre </th>
-          <th> Población </th>
-          <th></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr *ngFor="let region of resultado; let i=index"> <!-- Esto es lo que tenemos que repetir por cada país que encuentre -->
-          <td> {{i}} </td> <!-- Aquí obtendremos el número de resultado -->
-          <td>
-              <img class="small-flag" [src]="region.flags.svg" > <!-- Aquí obtendremos la url de la bandera -->
-          </td>
-          <td> {{region.capital}},{{region.name.common}}</td> <!-- La capital, el nombre del país y la población lo obtendremos de la api -->
-          <td> {{region.population}}</td>
-          <td>
-              <a >Ver...</a> <!-- Esto lo dejamos así de momento -->
-          </td>
-      </tr>
-  </tbody>
-</table>
+<div call="row">
+  <app-pais-tabla [resultado]="resultado"></app-pais-tabla>
+</div>

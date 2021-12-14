@@ -10,19 +10,18 @@ export class PorRegionComponent implements OnInit {
 
   constructor(private bsService:BuscaService) { }
 
-  regionB:string="";
+  termino:string="";
 
   ngOnInit(): void {
   }
-
 
   get resultado(){
     return this.bsService.resultado;
   }
 
-
-  buscaPais(){
-    this.bsService.buscarPais(this.regionB)
+  buscaPais(termino:string){
+    this.termino=termino;
+    this.bsService.buscarRegion(this.termino)
   }
 
 }

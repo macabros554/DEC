@@ -10,18 +10,18 @@ export class PorPaisComponent implements OnInit {
 
   constructor(private bsService:BuscaService) { }
 
-  paisB:string="";
+  termino:string="";
 
   ngOnInit(): void {
   }
-
 
   get resultado(){
     return this.bsService.resultado;
   }
 
-
-  buscaPais(){
-    this.bsService.buscarPais(this.paisB)
+  buscaPais(termino:string){
+    this.termino=termino;
+    this.bsService.buscarPais(this.termino)
   }
+
 }

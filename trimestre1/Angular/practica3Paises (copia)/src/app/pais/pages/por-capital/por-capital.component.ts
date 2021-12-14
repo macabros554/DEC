@@ -10,19 +10,18 @@ export class PorCapitalComponent implements OnInit {
 
   constructor(private bsService:BuscaService) { }
 
-  capitalB:string="";
+  termino:string="";
 
   ngOnInit(): void {
   }
-
 
   get resultado(){
     return this.bsService.resultado;
   }
 
-
-  buscaPais(){
-    this.bsService.buscarPais(this.capitalB)
+  buscaPais(termino:string){
+    this.termino=termino;
+    this.bsService.buscarCapital(this.termino)
   }
 
 }

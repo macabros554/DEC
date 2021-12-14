@@ -1,14 +1,14 @@
-<div class="bg-dark border-right p-3" id="sidebar">
-<h2>Busquedas</h2>
-<hr>
-<ul class="list-group">
-  <li class="nav-item" routerLinkActive="active">
-    <a class="nav-link list-group-item" href="" routerLink="/">Buscar pais</a>
-  </li>
-  <li class="nav-item" routerLinkActive="active">
-    <a class="nav-link list-group-item" href="region" routerLink="/region">Por region</a>
-  </li>
-  <li class="nav-item" routerLinkActive="active">
-    <a class="nav-link list-group-item" href="capital" routerLink="/capital">Por capital</a>
-  </li>
-</ul>
+<div  id="sidebar">
+  <h2>Busquedas</h2>
+  <hr>
+  <ul class="list-group">
+    <li class="list-group-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      Buscar pais
+    </li>
+    <li class="list-group-item" routerLink="/region" routerLinkActive="active">
+      Por region
+    </li>
+    <li class="list-group-item" routerLink="/capital" routerLinkActive="active">
+      Por capital
+    </li>
+  </ul>

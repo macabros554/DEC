@@ -1,0 +1,19 @@
+<h1>Busqueda por pais</h1>
+<div class="row">
+  <app-pais-busqueda (onEnter)="buscaPais($event)"></app-pais-busqueda>
+</div>
+
+<hr class="text-white"/>
+
+<div class="alert alert-info" *ngIf=termino!="">
+  Pais encontrado
+</div>
+
+<div call="row">
+  <div class="alert alert-danger">
+    No se encontró nada con el término {{termino}}
+  </div>
+  <app-pais-tabla [resultado]="resultado"></app-pais-tabla>
+</div>
+
+

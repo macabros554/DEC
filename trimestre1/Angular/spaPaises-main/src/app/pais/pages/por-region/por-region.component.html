@@ -1,0 +1,11 @@
+<h1>Búsqueda por país:</h1>
+<hr>
+<div class="row">
+    <app-input-pais (onEnter)="buscar($event)"></app-input-pais>
+</div>
+<hr>
+<div class="row">
+
+<app-pais-tabla [countries]="paises"></app-pais-tabla>
+
+</div>

@@ -1,0 +1,11 @@
+<h1>Busqueda por region</h1>
+<div class="row">
+  <app-pais-busqueda (onEnter)="buscaPais($event)"></app-pais-busqueda>
+</div>
+
+
+<hr class="text-white"/>
+
+<div call="row">
+  <app-pais-tabla [resultado]="resultado"></app-pais-tabla>
+</div>

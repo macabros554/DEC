@@ -1,0 +1,26 @@
+<table class="table table-hover" *ngIf="countries.length>0">
+    <thead>
+        <tr>
+            <th> # </th>
+            <th> Bandera </th>
+            <th> Nombre </th>
+            <th> Población </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pais of countries; let i=index">
+           
+            <td> {{i+1}} </td> 
+            <td>
+                <img class="small-flag" [src]="pais.flags.png"> <!-- Aquí obtendremos la url de la bandera -->
+            </td>
+            <td> {{pais.capital}}, {{pais.name.common}}</td>
+            <!-- La capital, el nombre del país y la población lo obtendremos de la api -->
+            <td> {{ pais.population |number}} </td>
+            <td>
+                <a>Ver...</a> <!-- Esto lo dejamos así de momento -->
+            </td>
+        </tr>
+    </tbody>
+</table>

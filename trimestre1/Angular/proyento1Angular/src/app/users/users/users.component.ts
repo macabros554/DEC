@@ -4,8 +4,7 @@ import { ServiUsuarioService } from 'src/app/servicios/servi-usuario.service';
 
 @Component({
   selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  templateUrl: './users.component.html'
 })
 export class UsersComponent implements OnInit {
 

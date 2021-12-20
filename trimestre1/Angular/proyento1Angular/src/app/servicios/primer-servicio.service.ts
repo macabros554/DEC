@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 export class PrimerServicioService {
   constructor() { }
 
-
   servers=[
       {
       id: 1,
@@ -24,4 +23,11 @@ export class PrimerServicioService {
       status: 'offline'
       }
     ]
+
+    get servervidores(){
+      return this.servers;
+    }
+
 }
+
+

@@ -4,8 +4,7 @@ import { PrimerServicioService } from 'src/app/servicios/primer-servicio.service
 
 @Component({
   selector: 'app-servers',
-  templateUrl: './servers.component.html',
-  styleUrls: ['./servers.component.css']
+  templateUrl: './servers.component.html'
 })
 export class ServersComponent implements OnInit {
 

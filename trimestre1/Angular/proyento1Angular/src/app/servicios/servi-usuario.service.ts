@@ -18,6 +18,10 @@ export class ServiUsuarioService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
+  get resultados(){
+    return this.resultado;
+  }
+
   buscarUsuarios(){
     this.http.get<InterfaceUsuario[]>(this.enlace).subscribe((resp) => {
       this.resultado = resp;

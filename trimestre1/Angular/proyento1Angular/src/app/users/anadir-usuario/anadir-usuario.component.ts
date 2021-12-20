@@ -4,8 +4,7 @@ import { InterfaceUsuario } from '../../interfaces/interfaz-usuario';
 
 @Component({
   selector: 'app-anadir-usuario',
-  templateUrl: './anadir-usuario.component.html',
-  styleUrls: ['./anadir-usuario.component.css']
+  templateUrl: './anadir-usuario.component.html'
 })
 export class AnadirUsuarioComponent implements OnInit {
 

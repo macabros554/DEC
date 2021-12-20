@@ -1,0 +1,21 @@
+<form (ngSubmit)="enviarUsuario()">
+  <label>Nombre usuario: </label>
+  <input
+  type="text"
+  class="form-control"
+  placeholder="Buscar ..."
+  name="nombre"
+  value="Nombre"
+  [(ngModel)] ="elNombre"
+  >
+  <label>Email usuario: </label>
+  <input
+  type="text"
+  class="form-control"
+  placeholder="Buscar ..."
+  name="email"
+  value="email"
+  [(ngModel)] ="elEmail"
+  >
+  <button type="submit" class="btn-primary">Enviar</button>
+</form>

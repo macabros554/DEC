@@ -14,7 +14,7 @@ export class BuscaService {
   enlaceCapital:string="https://restcountries.com/v3.1/capital/";
   enlaceRegion:string="https://restcountries.com/v3.1/region/";
   pais:string="";
-  resultado:any=null;
+  resultado!:InterfaceGlobal;
   tieneError:boolean=false;
 
   buscarPais(query:string){

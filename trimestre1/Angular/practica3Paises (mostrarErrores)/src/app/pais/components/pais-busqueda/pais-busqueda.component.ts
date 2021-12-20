@@ -1,4 +1,5 @@
 import { Component,EventEmitter, OnInit, Output } from '@angular/core';
+import { BuscaService } from '../../services/busca.service';
 
 @Component({
   selector: 'app-pais-busqueda',
@@ -9,7 +10,11 @@ import { Component,EventEmitter, OnInit, Output } from '@angular/core';
 export class PaisBusquedaComponent implements OnInit {
   @Output() onEnter: EventEmitter<string> = new EventEmitter();
   paisB: string="";
-  constructor() { }
+  constructor(private bsService:BuscaService) { }
+
+  get isError(){
+    return this.bsService.tieneError;
+  }
 
   ngOnInit(): void {
   }

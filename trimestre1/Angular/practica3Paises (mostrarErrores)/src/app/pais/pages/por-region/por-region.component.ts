@@ -15,10 +15,6 @@ export class PorRegionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  get isError(){
-    return this.bsService.tieneError;
-  }
-
   get resultado(){
     return this.bsService.resultado;
   }

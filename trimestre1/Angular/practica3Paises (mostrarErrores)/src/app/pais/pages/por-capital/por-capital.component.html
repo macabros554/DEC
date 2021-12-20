@@ -3,13 +3,8 @@
   <app-pais-busqueda (onEnter)="buscaPais($event)"></app-pais-busqueda>
 </div>
 
-
-
 <hr class="text-white"/>
 
 <div call="row">
-  <div class="alert alert-danger" *ngIf=isError>
-    No se encontró nada con el término {{termino}}
-  </div>
   <app-pais-tabla [resultado]="resultado"></app-pais-tabla>
 </div>

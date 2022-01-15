@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "laCamara",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

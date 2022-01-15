@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <!-- Default Checkbox -->
+<ion-checkbox></ion-checkbox>
+<ion-label>normal</ion-label>
+<!-- Disabled Checkbox -->
+<ion-checkbox disabled="true"></ion-checkbox>
+<ion-label>apagado</ion-label>
+
+
+<!-- Checked Checkbox -->
+<ion-checkbox checked="true"></ion-checkbox>
+<ion-label>Activada</ion-label>
+
+<!-- Checkbox Colors -->
+<ion-checkbox color="primary"></ion-checkbox>
+<ion-label>Uno</ion-label>
+<ion-checkbox color="secondary"></ion-checkbox>
+<ion-label>Dos</ion-label>
+<ion-checkbox color="danger"></ion-checkbox>
+<ion-label>Peligro</ion-label>
+<ion-checkbox color="light"></ion-checkbox>
+<ion-label>blanco</ion-label>
+<ion-checkbox color="dark"></ion-checkbox>
+<ion-label>negro</ion-label>
+
+<!-- Checkboxes in a List -->
+<ion-list>
+  <ion-item *ngFor="let entry of form">
+    <ion-label>{{entry.val}}</ion-label>
+    <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+</ion-list>
+</ion-content>

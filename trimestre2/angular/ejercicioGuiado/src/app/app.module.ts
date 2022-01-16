@@ -13,7 +13,7 @@ import { AuthGuard } from './services/authGuard.service';
 import { AuthService } from './services/auth.service';
 import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
-import { ServerResolver } from './servers/server-resolver.service';
+import { ServerResolver } from './servers/server/server-resolver.service';
 
 @NgModule({
   declarations: [

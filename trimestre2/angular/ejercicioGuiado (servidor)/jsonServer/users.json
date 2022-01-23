@@ -1,0 +1,20 @@
+{"users":[
+  {"id":1,"email":"bruno@email.com",
+    "password":"bruno"},
+  {"id":2,"email":"techie@email.com",
+    "password":"techie"},
+  {"id":3,"email":"nilson@email.com",
+    "password":"nilson"},
+  {"id":4,"email":"javi@email.com",
+    "password":"javi"},
+  {"id":5,"email":"admin@email.com",
+    "password":"admin"},
+  {"id":6,"email":"salva3@email.com",
+    "password":"1234"},
+  {"id":7,"email":"nilson4@email.com",
+    "password":"nilson"},
+  {"id":8,"email":"nilson7@email.com",
+    "password":"nilson"},
+  {"id":9,"email":"franco@email.com",
+    "password":"espania"}
+  ]}

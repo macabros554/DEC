@@ -13,8 +13,15 @@ export class LibroService {
 
   baseUrl:string="https://openlibrary.org/search.json?q=naruto&limit=10";
 
+  nuevaURL:string="https://openlibrary.org/search.json?isbn=";
+
   buscarLibros():Observable<LibroBibri>{
     const url = `${this.baseUrl}`;
+    return this.httpClient.get<LibroBibri>(url);
+  }
+
+  recuperarLibro(idLibro:string):Observable<LibroBibri>{
+    const url = `${this.nuevaURL+idLibro}`;
     return this.httpClient.get<LibroBibri>(url);
   }
 

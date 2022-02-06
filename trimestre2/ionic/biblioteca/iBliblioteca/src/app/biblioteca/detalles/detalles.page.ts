@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { LibroService } from '../../services/libro.service';
+import { Doc } from '../../interfaces/libroBibli';
 
 @Component({
   selector: 'app-detalles',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetallesPage implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,private bibliotecaService:LibroService) { }
+
+  elLibro:Doc[];
 
   ngOnInit() {
+    console.log(this.route.snapshot.paramMap.get('id'));
+    this.buscarLibros();
+
   }
+
+  buscarLibros(){
+    this.bibliotecaService.recuperarLibro(this.route.snapshot.paramMap.get('id'))
+    .subscribe( resp => {
+      console.log(resp.docs);
+      this.elLibro=resp.docs;
+    },(error) => {
+        console.log("po como lo digo, no das ni una")
+    });
+  }
+
 
 }

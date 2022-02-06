@@ -5,16 +5,23 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-item>
-      <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label>ion-item in a card, icon left, button right</ion-label>
-      <ion-button fill="outline" slot="end">View</ion-button>
-    </ion-item>
-
+  <ion-card *ngFor="let libro of elLibro">
+<!--imagen,titulo,autor,año,isbn,editorial-->
+    <img src="https://covers.openlibrary.org/b/isbn/{{libro.isbn[4]}}-M.jpg" />
+    <ion-card-header>
+      <ion-card-title>{{libro.title}}</ion-card-title>
+    </ion-card-header>
     <ion-card-content>
-      This is content, without any paragraph or header tags,
-      within an ion-card-content element.
+      Autor: {{libro.author_name}}
+    </ion-card-content>
+    <ion-card-content>
+      Año: {{libro.publish_year}}
+    </ion-card-content>
+    <ion-card-content>
+      ISBN: {{libro.isbn[2]}}
+    </ion-card-content>
+    <ion-card-content>
+      Editorial: {{libro.publisher}}
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -7,8 +7,8 @@
 <ion-content fullscreen>
 
   <ion-list>
-    <ion-button routerLink="detalles" *ngFor="let libro of listaLibros">
-      <ion-item >
+
+      <ion-item *ngFor="let libro of listaLibros" [routerLink]="['detalles',libro.isbn[2]]">
         <ion-thumbnail slot="start">
           <img src="https://covers.openlibrary.org/b/isbn/{{libro.isbn[4]}}-M.jpg">
         </ion-thumbnail>
@@ -19,7 +19,7 @@
         </ion-label>
       </ion-item>
 
-    </ion-button>
+
 
 
   </ion-list>

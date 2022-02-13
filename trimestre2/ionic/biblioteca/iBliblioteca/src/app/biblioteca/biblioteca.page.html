@@ -4,11 +4,39 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-toolbar>
+  <ion-searchbar placeholder="Buscar libros"
+                 animated
+                 debounce="700"
+                 [value]="searchTerm"
+                 (ionChange)="buscarLibros( $event )"></ion-searchbar>
+</ion-toolbar>
+
 <ion-content fullscreen>
 
-  <ion-list>
+  <ion-card>
+    <ion-button color="danger" (click)="scanBRcode()" expand="block">
+        Scan Barcode
+    </ion-button>
+  </ion-card>
 
-      <ion-item *ngFor="let libro of listaLibros" [routerLink]="['detalles',libro.isbn[2]]">
+  <ion-card>
+      <div *ngIf="scannedBarCode">
+          <ion-item>
+              Scanned code output: <strong>{{ scannedBarCode["text"] }}</strong>
+          </ion-item>
+          <ion-item>
+              Scanned code output: <strong>{{ scannedBarCode["format"] }}</strong>
+          </ion-item>
+      </div>
+  </ion-card>
+  <div style='text-align: center;'>
+    <!-- insert your custom barcode setting your data in the GET parameter "data" -->
+    <img alt='Barcode Generator TEC-IT'
+    src='https://barcode.tec-it.com/barcode.ashx?data={{ scannedBarCode["text"] }}&code=ISBN13'/>
+  </div>
+  <ion-list>
+      <ion-item *ngFor="let libro of listaLibros" [routerLink]="['detalles',libro.isbn[0]]">
         <ion-thumbnail slot="start">
           <img src="https://covers.openlibrary.org/b/isbn/{{libro.isbn[4]}}-M.jpg">
         </ion-thumbnail>
@@ -18,9 +46,5 @@
           <p>{{libro.first_publish_year}}</p>
         </ion-label>
       </ion-item>
-
-
-
-
   </ion-list>
 </ion-content>

@@ -3,6 +3,7 @@ import { Doc, LibroBibri } from '../interfaces/libroBibli';
 import { LibroService } from '../services/libro.service';
 import { BarcodeScanner, BarcodeScannerOptions } from "@ionic-native/barcode-scanner/ngx";
 import { Router } from '@angular/router';
+import { StorageService } from './services/storage.service';
 
 
 
@@ -15,13 +16,16 @@ import { Router } from '@angular/router';
 export class BibliotecaPage implements OnInit {
 
   searchTerm = '';
-  looking = false;
-
+  looking:boolean = false;
+  mostrar:boolean=false;
+  listaLibros:Doc[];
   encodedData: any;
   scannedBarCode: {};
   barcodeScannerOptions: BarcodeScannerOptions;
 
-  constructor(private bibliotecaService:LibroService,private scanner: BarcodeScanner, private route: Router) {
+  listafavoritos:String[]=[];
+
+  constructor(private bibliotecaService:LibroService,private scanner: BarcodeScanner, private route: Router,private storage: StorageService) {
 
       this.encodedData = "Programming isn't about what you know";
 
@@ -40,7 +44,7 @@ export class BibliotecaPage implements OnInit {
     });
   }
 
-  listaLibros:Doc[];
+
 
   ngOnInit() {
 
@@ -69,5 +73,13 @@ export class BibliotecaPage implements OnInit {
     });
   }
 
+  mostrarFavoritos(){
+    console.log(this.favoritos);
+    this.mostrar=true;
+  }
+
+  get favoritos(){
+      return this.storage.listafavoritos;
+  }
 
 }

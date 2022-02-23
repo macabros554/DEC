@@ -10,6 +10,8 @@
     <img src="https://covers.openlibrary.org/b/isbn/{{libro.isbn[4]}}-M.jpg" />
     <ion-card-header>
       <ion-card-title>{{libro.title}}</ion-card-title>
+      <ion-icon *ngIf="!estrella" name="star-outline" (click)="anadirStorage(libro.isbn[2],libro)"></ion-icon>
+      <ion-icon *ngIf="estrella" name="star" (click)="borrarStorage(libro.isbn[2])"></ion-icon>
     </ion-card-header>
     <ion-card-content>
       Autor: {{libro.author_name}}

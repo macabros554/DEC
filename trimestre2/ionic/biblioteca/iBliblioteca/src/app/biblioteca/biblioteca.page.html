@@ -20,7 +20,7 @@
     </ion-button>
   </ion-card>
 
-  <ion-card>
+  <!--<ion-card>
       <div *ngIf="scannedBarCode">
           <ion-item>
               Scanned code output: <strong>{{ scannedBarCode["text"] }}</strong>
@@ -29,16 +29,22 @@
               Scanned code output: <strong>{{ scannedBarCode["format"] }}</strong>
           </ion-item>
       </div>
-  </ion-card>
-  <div style='text-align: center;'>
-    <!-- insert your custom barcode setting your data in the GET parameter "data" -->
+  </ion-card>-->
+  <!-- <div style='text-align: center;'>
     <img alt='Barcode Generator TEC-IT'
     src='https://barcode.tec-it.com/barcode.ashx?data={{ scannedBarCode["text"] }}&code=ISBN13'/>
-  </div>
-  <ion-list>
+  </div> -->
+
+  <ion-card>
+    <ion-button expand="block" (click)="mostrarFavoritos()">
+        Favoritos
+    </ion-button>
+  </ion-card>
+
+  <ion-list *ngIf="looking">
       <ion-item *ngFor="let libro of listaLibros" [routerLink]="['detalles',libro.isbn[0]]">
         <ion-thumbnail slot="start">
-          <img src="https://covers.openlibrary.org/b/isbn/{{libro.isbn[4]}}-M.jpg">
+          <img src="https://covers.openlibrary.org/b/isbn/{{libro.isbn[0]}}-M.jpg">
         </ion-thumbnail>
         <ion-label>
           <h3>{{libro.title}}</h3>
